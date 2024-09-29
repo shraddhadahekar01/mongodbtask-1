@@ -1,0 +1,26 @@
+[
+  {
+    $group:
+      /**
+       * _id: The id of the group.
+       * fieldN: The first field name.
+       */
+      {
+        _id: "$ship_mode",
+        avg_sales: {
+          $avg: "$sales"
+        }
+      }
+  },
+  {
+    $match:
+      /**
+       * query: The query in MQL.
+       */
+      {
+        avg_sales: {
+          $lt: 500
+        }
+      }
+  }
+]

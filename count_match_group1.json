@@ -1,0 +1,31 @@
+[
+  {
+    $match:
+      /**
+       * query: The query in MQL.
+       */
+      {
+        $or: [
+          {
+            state: "Texas"
+          },
+          {
+            state: "California"
+          }
+        ]
+      }
+  },
+  {
+    $group:
+      /**
+       * _id: The id of the group.
+       * fieldN: The first field name.
+       */
+      {
+        _id: null,
+        count_customers: {
+          $sum: 1
+        }
+      }
+  }
+]

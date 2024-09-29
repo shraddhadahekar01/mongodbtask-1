@@ -1,0 +1,14 @@
+[
+  {
+    $match:
+      /**
+       * query: The query in MQL.
+       */
+      {
+        country: "United States",
+        age: {
+          $gt: 50
+        }
+      }
+  }
+]

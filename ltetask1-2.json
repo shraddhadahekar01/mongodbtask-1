@@ -1,0 +1,16 @@
+[
+  {
+    $match:
+      /**
+       * query: The query in MQL.
+       */
+      {
+        city: {
+          $in: ["Los Angeles", "New York City"]
+        },
+        age: {
+          $lte: 35
+        }
+      }
+  }
+]
